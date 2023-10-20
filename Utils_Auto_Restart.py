@@ -11,6 +11,7 @@ console_handler = logging.StreamHandler()
 formatter = logging.Formatter('%(message)s')
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
+import time
 
 
 
@@ -20,22 +21,28 @@ class InfoHub:
 INFO_HUB = InfoHub()
 
 
+def demo_run():
+    # Do something
+    print('Run once.')
+    INFO_HUB.N +=1
+    time.sleep(1)
+    return
 
-def looper(smc_list):
+
+
+def looper(target_list):
 
     INFO_HUB.N = -1 #-1
 
     res_list = []
-    while INFO_HUB.N < (len(smc_list)-1):
+    while INFO_HUB.N < (len(target_list)-1):
         try:
 
             # Automation Start Here
 
-            driver = init()
-            driver.refresh()
-            login(driver)
-            prepare_page(driver)
-            df = batch_search_smc(smc_list, driver, INFO_HUB.N)
+            # Run some code
+            demo_run()
+            
 
             # Automation End Here
 
@@ -52,7 +59,7 @@ def looper(smc_list):
 def main():
 
     # Fake code for demo
-    smc_list = ['', '', ...]
+    target_list = ['example1', 'example2', 'example3']
 
     N = 0 #-1
 
